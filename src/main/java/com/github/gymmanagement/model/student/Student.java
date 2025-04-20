@@ -1,14 +1,13 @@
-package com.github.gymmanagement.model;
+package com.github.gymmanagement.model.student;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+
 
 import java.time.LocalDate;
 import java.util.UUID;
 
 @Entity
+@Table(name = "tb_students")
 public class Student {
 
     @Id
@@ -20,7 +19,7 @@ public class Student {
     private String gender;
     private String address;
     private String phone;
-
+    private String email;
     private String belt;
 
     private final LocalDate createdAt = LocalDate.now();
@@ -28,13 +27,22 @@ public class Student {
     public Student() {
     }
 
-    public Student(String name, int age, String gender, String address, String phone, String belt) {
+    public Student(String name, int age, String gender, String address, String phone, String email, String belt) {
         this.name = name;
         this.age = age;
         this.gender = gender;
         this.address = address;
         this.phone = phone;
+        this.email = email;
         this.belt = belt;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public int getAge() {
