@@ -97,4 +97,8 @@ public class StudentDTO {
     public void setPhone(String phone) {
         this.phone = phone;
     }
+
+    public void setId(UUID uuid) {
+        this.id = uuid;
+    }
 }

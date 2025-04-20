@@ -11,6 +11,12 @@ public class StudentExistsException extends RuntimeException {
         this.name = name;
         this.id = id;
     }
+    public StudentExistsException( String msg) {
+        super( msg);
+        this.name = null;
+        this.id = null;
+    }
+
 
     public UUID getId() {
         return id;
